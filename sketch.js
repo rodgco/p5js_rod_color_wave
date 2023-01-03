@@ -11,15 +11,10 @@ let lets = ["r", "o", "d", "g", "c", "o"];
 let n1off = 0;
 let n2off = 0;
 
-let myFont;
-sketch.preload = function () {
-  myFont = loadFont("/AvenirNextLTPro-Demi.otf");
-};
 
 sketch.setup = function () {
-  createCanvas(windowWidth, windowHeight, WEBGL);
+  createCanvas(windowWidth, windowHeight);
   colorMode(HSB, 360, 120, 100, 255);
-  textFont(myFont);
   textSize(tam);
 };
 
@@ -39,7 +34,7 @@ sketch.draw = function () {
       // const n3 = noise(x * rez1, y * rez1, n2off);
       fill(n2 * 360, 100, 90);
       push();
-      translate(-width / 2 + x, -height / 2 + y);
+      translate(x, y);
       rotate((n2 - 0.5) * 2 * PI);
       text(lets[(x + y) % 6], 0, 0);
       pop();
