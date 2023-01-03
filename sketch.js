@@ -13,6 +13,7 @@ let n2off = 0;
 
 sketch.setup = function () {
   createCanvas(windowWidth, windowHeight);
+  textFont('Prosto One');
   colorMode(HSB, 360, 120, 100, 255);
   textSize(tam);
 };
