@@ -4,9 +4,9 @@ let rez1 = 0.004;
 let rez2 = 0.008;
 // let rez3 = 0.006;
 let tam = 30;
-let gap = -8;
+let gap = -7;
 
-let lets = ["r", "o", "d", "r", "i", "g", "o"];
+let lets = ["r", "o", "d", "g", "c", "o"];
 
 let n1off = 0;
 let n2off = 0;
@@ -24,15 +24,15 @@ sketch.windowResized = function () {
 
 sketch.draw = function () {
   background(0, 0, 25);
-  for (let x = 0; x < width + tam; x += tam + gap) {
-    for (let y = 0; y < height + tam; y += tam + gap) {
+  for (let x = -10; x < width + tam; x += 26+gap) {
+    for (let y = -10; y < height + tam; y += 26+gap) {
       const n2 = noise(x * rez2 + 10000 + n2off, y * rez2 + 10000 + n2off, n1off);
       // const n3 = noise(x * rez1, y * rez1, n2off);
       fill(n2 * 360, 100, 90);
       push();
       translate(x, y);
       rotate((n2 - 0.5) * 2 * PI);
-      text(lets[(x + y) % 7], 0, 0);
+      text(lets[(x + y) % 6], 0, 0);
       pop();
     }
   }
