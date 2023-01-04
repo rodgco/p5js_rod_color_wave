@@ -4,8 +4,8 @@ import { createNoise3D } from "simplex-noise";
 let rez1 = 0.008;
 let rez2 = 0.0008;
 // let rez3 = 0.006;
-let tam = 30;
-let gap = -7;
+let tam = 40;
+let gap = -16;
 
 let lets = "rodgco".split("");
 
@@ -27,10 +27,10 @@ sketch.windowResized = function () {
 
 sketch.draw = function () {
   background(0, 0, 25);
-  for (let x = -10; x < width + tam; x += 26 + gap) {
-    for (let y = -10; y < height + tam; y += 26 + gap) {
+  for (let x = 0; x < width / (tam+gap); x++) {
+    for (let y = 0; y < height / (tam+gap); y++) {
       const n2 = map(
-        noise3d(x * rez2 * 2 + n2off, y * rez2 * 2 + n2off, n1off),
+        noise3d(x*tam * rez2 + n2off, y *tam* rez2 + n2off, n1off),
         -1,
         1,
         0,
@@ -38,7 +38,7 @@ sketch.draw = function () {
       );
       fill(n2 * 360, 100, 90);
       push();
-      translate(x, y);
+      translate(x*(tam+gap), y*(tam+gap));
       rotate((n2 - 0.5) * 2 * PI);
       text(lets[(x + y) % 6], 0, 0);
       pop();
