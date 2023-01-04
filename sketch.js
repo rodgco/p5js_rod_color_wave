@@ -7,7 +7,7 @@ let rez2 = 0.0008;
 let tam = 40;
 let gap = -16;
 
-let lets = "rodgco".split("");
+let lets = "|".split("");
 
 let n1off = 0;
 let n2off = 0;
@@ -40,7 +40,7 @@ sketch.draw = function () {
       push();
       translate(x*(tam+gap), y*(tam+gap));
       rotate((n2 - 0.5) * 2 * PI);
-      text(lets[(x + y) % 6], 0, 0);
+      text(lets[(x + y) % lets.length], 0, 0);
       pop();
     }
   }
