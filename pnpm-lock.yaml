@@ -2,12 +2,14 @@ lockfileVersion: 5.4
 
 specifiers:
   p5js-wrapper: ^1.2.3
+  simplex-noise: ^4.0.1
   vite: ^4.0.0
 
 dependencies:
   p5js-wrapper: 1.2.3
 
 devDependencies:
+  simplex-noise: 4.0.1
   vite: 4.0.4
 
 packages:
@@ -313,6 +315,10 @@ packages:
     hasBin: true
     optionalDependencies:
       fsevents: 2.3.2
+    dev: true
+
+  /simplex-noise/4.0.1:
+    resolution: {integrity: sha512-zl/+bdSqW7HJOQ0oDbxrNYaF4F5ik0i7M6YOYmEoIJNtg16NpvWaTTM1Y7oV/7T0jFljawLgYPS81Uu2rsfo1A==}
     dev: true
 
   /source-map-js/1.0.2:
